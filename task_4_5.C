@@ -377,7 +377,7 @@ void fit_bupsik(RooWorkspace *wspace, uint cate, double bdt_min)
     leg1->AddEntry(frame1->findObject("t_pdf_sigmc"),"Fit","L");
     leg1->Draw();
     
-    canvas1->Print(Form("task4_5d_%d.pdf",cate));
+    canvas1->Print(Form("task_4_5d_%d.pdf",cate));
     
     sigmc_mean1.setConstant(true);
     sigmc_mean2.setConstant(true);
@@ -440,7 +440,7 @@ void fit_bupsik(RooWorkspace *wspace, uint cate, double bdt_min)
     leg2->AddEntry(frame2->findObject("t_pdf_comb"),"Combinatorial bkg.","L");
     leg2->Draw();
     
-    canvas2->Print(Form("task4_5e_%d.pdf",cate));
+    canvas2->Print(Form("task_4_5e_%d.pdf",cate));
     
     cout << "Category: " << cate << endl;
     cout << "Selection efficiency: " << eff << " +- " << eff_error << endl;
