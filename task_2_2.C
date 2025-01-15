@@ -7,7 +7,7 @@ void task_2_2(){
   RooRealVar wgt("wgt","",1.,0.,1000.);
   RooDataSet *rds_data = new RooDataSet("rds_data","",RooArgSet(m,wgt),"wgt");
 
-  TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bupsikData.root");
+  TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bupsikData.root");
   TTree *tin = (TTree*)fin->Get("bupsikData");
 
   unsigned int cate_t;

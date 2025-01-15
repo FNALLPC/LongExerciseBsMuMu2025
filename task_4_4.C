@@ -12,7 +12,7 @@ void task_4_4()
     RooDataSet *rds_data = new RooDataSet("rds_data","",RooArgSet(m,wgt),"wgt");
     RooDataSet *rds_mc = new RooDataSet("rds_mc","",RooArgSet(m));
     
-    TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bupsikData.root");
+    TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bupsikData.root");
     TTree *tin = (TTree*)fin->Get("bupsikData");
     
     uint cate_t;
@@ -31,7 +31,7 @@ void task_4_4()
     }
     delete fin;
     
-    fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bupsikMc.root");
+    fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bupsikMc.root");
     tin = (TTree*)fin->Get("bupsikMc");
     
     tin->SetBranchAddress("cate",&cate_t);

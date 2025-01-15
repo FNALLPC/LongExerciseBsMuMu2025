@@ -8,7 +8,7 @@ void task_2_1(){
   RooRealVar cate("cate","",-1,20);
 
   // B -> J\psi K MC
-  TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bupsikMc.root");
+  TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bupsikMc.root");
   TTree *tin = (TTree*)fin->Get("bupsikMc");
 
   RooDataSet* rds_mc   = new RooDataSet("rds_mc", "rds_mc", tin,  RooArgSet(cate, m));

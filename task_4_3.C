@@ -11,7 +11,7 @@ void task_4_3()
     RooRealVar m("m","",4.9,5.9);
     RooDataSet *rds = new RooDataSet("rds","",RooArgSet(m));
     
-    TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bsmmMc.root");
+    TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bsmmMc.root");
     TTree *tin = (TTree*)fin->Get("bsmmMc");
         
     unsigned int cate_t;

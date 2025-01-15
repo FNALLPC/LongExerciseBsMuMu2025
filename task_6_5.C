@@ -66,7 +66,7 @@ void task_6_5()
     }
     RooDataSet *rds_data = new RooDataSet("rds_data","",RooArgSet(*m,cate));
     
-    TFile *fin_data = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bmmSoup10.root");
+    TFile *fin_data = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bmmSoup10.root");
     TTree *tin = (TTree*)fin_data->Get("bmmSoup10_100");
     
     uint cate_t;

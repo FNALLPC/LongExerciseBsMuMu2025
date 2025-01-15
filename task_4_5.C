@@ -36,7 +36,7 @@ void build_pdf_peak(RooWorkspace *wspace, uint cate, double bdt_min)
 
     double weight_max = 0.; // get the largest weight value across samples
     for(int proc=0; proc<(int)decay.size(); proc++) {
-        TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/" + decay[proc]+".root");
+        TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/" + decay[proc]+".root");
         TTree *tin = (TTree*)fin->Get(decay[proc]);
         double weight = yield[proc]/(double)tin->GetEntries(Form("cate==%d",cate));
         if (weight>weight_max) weight_max = weight;
@@ -44,7 +44,7 @@ void build_pdf_peak(RooWorkspace *wspace, uint cate, double bdt_min)
     }
 
     for(int proc=0; proc<(int)decay.size(); proc++) {
-        TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/" + decay[proc]+".root");
+        TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/" + decay[proc]+".root");
         TTree *tin = (TTree*)fin->Get(decay[proc]);
         
         unsigned int cate_t;
@@ -142,7 +142,7 @@ void build_pdf_semi(RooWorkspace *wspace, uint cate, double bdt_min)
     double sum_weight = 0.;
     double sum_weight_err = 0.;
     for(int proc=0; proc<(int)decay.size(); proc++) {
-        TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/"+decay[proc]+".root");
+        TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/"+decay[proc]+".root");
         TTree *tin = (TTree*)fin->Get(decay[proc]);
         
         uint cate_t;
@@ -215,7 +215,7 @@ void build_pdf_bs(RooWorkspace *wspace, uint cate, double bdt_min)
     RooRealVar m("m","",4.9,5.9);
     RooDataSet *rds = new RooDataSet("rds","",RooArgSet(m));
     
-    TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bsmmMc.root");
+    TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bsmmMc.root");
     TTree *tin = (TTree*)fin->Get("bsmmMc");
         
     uint cate_t;
@@ -303,7 +303,7 @@ void fit_bupsik(RooWorkspace *wspace, uint cate, double bdt_min)
     RooDataSet *rds_data = new RooDataSet("rds_data","",RooArgSet(m,wgt),"wgt");
     RooDataSet *rds_mc = new RooDataSet("rds_mc","",RooArgSet(m));
     
-    TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bupsikData.root");
+    TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bupsikData.root");
     TTree *tin = (TTree*)fin->Get("bupsikData");
     
     uint cate_t;
@@ -322,7 +322,7 @@ void fit_bupsik(RooWorkspace *wspace, uint cate, double bdt_min)
     }
     delete fin;
     
-    fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bupsikMc.root");
+    fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bupsikMc.root");
     tin = (TTree*)fin->Get("bupsikMc");
     
     tin->SetBranchAddress("cate",&cate_t);
@@ -468,7 +468,7 @@ void build_pdf_comb(RooWorkspace *wspace, uint cate, double bdt_min)
     RooFormulaVar comb_B2(Form("comb_B2_%d",cate), "", "1.-@0", RooArgList(comb_B1));
     RooBernstein pdf(Form("pdf_comb_%d",cate), "", m, RooArgList(comb_B1, comb_B2));
     
-    TFile *fin = new TFile("/eos/user/c/cmsdas/2024/long-ex-bph/bmmData-blind.root");
+    TFile *fin = new TFile("/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/bmmData-blind.root");
     TTree *tin = (TTree*)fin->Get("bmmData");
     
     double N_comb_guess = (double)tin->GetEntries(Form("cate==%d&&bdt>%g&&m>5.45",cate,bdt_min));

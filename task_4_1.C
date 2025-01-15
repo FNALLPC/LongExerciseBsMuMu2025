@@ -9,7 +9,7 @@ void task_4_1()
     vector<TString> decay;
     vector<double> yield, yield_err;
 
-    TString input_path = "/eos/user/c/cmsdas/2024/long-ex-bph/";
+    TString input_path = "/eos/uscms/store/user/cmsdas/2025/long_exercises/long-ex-bs-mumu/";
     
     // B0 -> mu mu 
     decay.push_back("bdmmMc");
