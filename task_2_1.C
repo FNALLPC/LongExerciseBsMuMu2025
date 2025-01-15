@@ -39,7 +39,7 @@ void task_2_1(){
 
 
 
-  pdf_sig.paramOn(frame,Layout(0.9,0.6,0.5)); // xmax,xmin,ymax
+  pdf_sig.paramOn(frame,RooFit::Layout(0.9,0.6,0.5)); // xmax,xmin,ymax
   frame->getAttText()->SetTextSize(0.02);
 
   TCanvas* canvas = new TCanvas("canvas", "", 600, 600);
