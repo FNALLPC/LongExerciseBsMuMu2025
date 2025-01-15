@@ -60,7 +60,7 @@ void task_2_2(){
   rds_data->plotOn(frame, Name("t_rds_data"));
   model.plotOn(frame, Name("t_model"), LineWidth(3));
   model.plotOn(frame, Name("t_pdf_comb"), Components("pdf_comb"), LineWidth(3), LineStyle(2), LineColor(kGray+1));
-  model.paramOn(frame,Layout(0.9,0.6,0.6)); // xmax,xmin,ymax
+  model.paramOn(frame,RooFit::Layout(0.9,0.6,0.6)); // xmax,xmin,ymax
   frame->getAttText()->SetTextSize(0.02);
 
   TCanvas* canvas = new TCanvas("canvas", "", 600, 600);
